@@ -1,5 +1,8 @@
-<h1>Book a flight</h1>
-<%= link_to 'Admin', '/admins' %>
+<body class="image">
+  <div class="centering">
+    <div id="back">
+  <h1>Book a flight</h1>
+
 
 <% if @flight != [] %>
   Seats available. Book a flight
@@ -11,6 +14,11 @@
     <%= f.text_field :seat_type %>
     <%= f.submit 'Book' %>
   <% end %>
+  <br>
+  <%= link_to 'Admin', '/admins' %>
 <% else %>
   No seats available.
 <% end %>
+</div>
+</div>
+</body>

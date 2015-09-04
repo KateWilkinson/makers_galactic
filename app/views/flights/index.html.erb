@@ -1,20 +1,7 @@
-<h1>Book a flight</h1>
-<%= link_to 'Admin', '/admins' %>
-
-<% if @flight != [] %>
-  Seats available. Book a flight
-
-  <%= form_for [@flight, @ticket] do |f| %>
-    <%= f.label :name %>
-    <%= f.text_field :name %>
-    <%= f.label :seat %>
-    <%= f.text_field :seat_type %>
-    <%= f.submit 'Book' %>
-  <% end %>
-<% else %>
-  No seats available.
-<% end %>
-
-
-
-
+<body class="image">
+  <div class="centering">
+    <div id="back">
+      YOU DID IT YOU'RE GOING TO THE MOON!
+    </div>
+  </div>
+</body>
