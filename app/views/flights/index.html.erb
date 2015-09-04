@@ -1,6 +1,11 @@
 <h1>Book a flight</h1>
+
 <%= form_for Ticket.new do |f| %>
   <%= f.label :name %>
   <%= f.text_field :name %>
   <%= f.submit %>
 <% end %>
+
+
+<%= link_to 'Admin', '/admins' %>
+
