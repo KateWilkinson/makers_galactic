@@ -13,6 +13,7 @@ feature 'Booking a flight' do
   end
 
   scenario 'user should be able to fill in name' do
+    Flight.create(available_seats: 5)
     visit '/flights'
     fill_in 'Name', with: 'John'
     click_button 'Book'

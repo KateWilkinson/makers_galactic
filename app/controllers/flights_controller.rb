@@ -2,6 +2,8 @@ class FlightsController < ApplicationController
 
   def index
     @flight = Flight.find(available_flight)
+    @ticket = Ticket.new
+    @ticket["flight_id"] = @flight.id
   end
 
   private
