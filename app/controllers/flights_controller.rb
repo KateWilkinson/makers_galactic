@@ -2,7 +2,6 @@ class FlightsController < ApplicationController
 
   def index
     @flight = Flight.find(available_flight)
-    @new_ticket = @flight.Ticket.new
   end
 
   private
@@ -11,7 +10,7 @@ class FlightsController < ApplicationController
       flights = Flight.all
       flights.each do |flight|
         if flight.available_seats > 0
-          flight.id
+          return flight.id
         else
           nil
         end

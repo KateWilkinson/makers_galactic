@@ -1,11 +1,16 @@
 <h1>Book a flight</h1>
 
-<%= @flight %>
 
-<%= form_for @new_ticket do |f| %>
-  <%= f.label :name %>
-  <%= f.text_field :name %>
-  <%= f.submit %>
+<% if @flight.length > 0 %>
+  Seats available. Book a flight
+
+  <%= form_for Ticket.new do |f| %>
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+    <%= f.submit %>
+  <% end %>
+<% else %>
+  No seats available.
 <% end %>
 
 

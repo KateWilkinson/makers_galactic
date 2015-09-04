@@ -2,6 +2,7 @@ require 'rails_helper'
 
 feature 'Booking a flight' do
   scenario 'landing on homepage a user can book a flight' do
+    Flight.create(available_seats: 0)
     visit '/flights'
     expect(page).to have_content 'Seats available. Book a flight'
   end
