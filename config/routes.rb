@@ -3,4 +3,5 @@ Rails.application.routes.draw do
 
   resources :flights
   resources :admins
+  get 'admin_password' => 'admins#password'
 end
