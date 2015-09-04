@@ -6,18 +6,19 @@ class FlightsController < ApplicationController
     @ticket["flight_id"] = @flight.id
   end
 
-  private
+  def edit
+    @flight = Flight.first
+  end
 
-    def available_flight
-      flights = Flight.all
-      flights.each do |flight|
-        if flight.available_seats > 0
-          return flight.id
-        else
-          nil
-        end
-      end
-    end
+  def update
+    @flight = Flight.first
+    @flight.update(flight_params)
+    redirect_to '/admins'
+  end
+
+  def flight_params
+    params.require(:flight).permit(:aisle_price)
+  end
 end
 
 

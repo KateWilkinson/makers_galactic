@@ -1,0 +1,31 @@
+@import url(https://fonts.googleapis.com/css?family=Tillana|Roboto+Mono:500);
+
+.image {
+  background-image: url(https://lh3.googleusercontent.com/-GBVULtZL47U/U8BZP90rPMI/AAAAAAABUz4/XuMlA3Jzdc8/w1280-h720/stars%2Brotaing%2Bcinemagraph.gif);
+  background-size: cover;
+  background-repeat: no-repeat
+}
+
+.centering {
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
+
+#back {
+  position: absolute;
+  top: 1%;
+  left: 40%;
+  margin-right: -50%;
+  transform: translate(-50%, -50%);
+  background-color: white;
+  opacity: 0.7;
+  border-radius: 2%;
+  padding: 200px;
+  z-index: -1;
+  font-family: 'Roboto Mono', ;
+  font-size: 1.3em
+}

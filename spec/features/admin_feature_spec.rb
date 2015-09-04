@@ -15,8 +15,22 @@ feature 'Checking bookings' do
     expect(page).to have_selector 'input'
   end
 
-  scenario 'admin should be able to see total revenue' do
+  scenario 'if no bookings total revenue should be £0' do
     visit '/admins'
-    expect(page).to have_content 'Total Revenue: £'
+    expect(page).to have_content 'Total Revenue: £0'
+  end
+
+  scenario 'if multiple bookings exist, should see total revenue' do
+    Ticket.create(name:'Lucy', price:40)
+    Ticket.create(name:'Kate', price:10)
+    visit '/admins'
+    expect(page).to have_content 'Total Revenue: £50'
+  end
+
+  scenario 'should be able to set ticket price' do
+    visit '/admins'
+    fill_in 'price', with: 50
+    click_button 'submit'
+    expect(page).to have_content 'Ticket price set'
   end
 end

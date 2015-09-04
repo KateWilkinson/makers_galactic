@@ -1,3 +1,24 @@
-<h1>Flights</h1>
+<body class="image">
+  <div class="centering">
+    <div id="back">
+    <h1>Bookings</h1>
 
-<p> Total Revenue: £</p>
+    <h2>Flight Alpha</h2>
+
+    <p>Current flight prices:</p>
+    <p>Aisle: £<%= @flight.aisle_price %></p>
+    <p>Window: £<%= @flight.aisle_price + (@flight.aisle_price * 0.2).to_i %> </p>
+
+    <h3>Tickets Sold</h3>
+    <% @tickets.each do |t| %>
+      Passenger: <%= t.name %><br>
+      Ticket price: £<%= t.price %><br>
+    <% end %>
+    <p> Total Revenue: £<%= @total %></p>
+
+
+
+    <%= link_to "Update Ticket Prices", edit_flight_path(@flight) %>
+  </div>
+  </div>
+</body>
