@@ -1,7 +1,9 @@
 class FlightsController < ApplicationController
 
   def index
-
+    @flight = Flight.find(available_flight)
+    @ticket = Ticket.new
+    @ticket["flight_id"] = @flight.id
   end
 
   def edit
@@ -18,3 +20,6 @@ class FlightsController < ApplicationController
     params.require(:flight).permit(:aisle_price)
   end
 end
+
+
+
