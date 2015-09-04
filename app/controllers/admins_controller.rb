@@ -1,6 +1,7 @@
 class AdminsController < ApplicationController
 
   def index
+    @flight = Flight.first
     @total = 0
     if Ticket.any?
       @tickets = Ticket.all

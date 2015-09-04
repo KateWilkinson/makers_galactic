@@ -26,4 +26,11 @@ feature 'Checking bookings' do
     visit '/admins'
     expect(page).to have_content 'Total Revenue: £50'
   end
+
+  scenario 'should be able to set ticket price' do
+    visit '/admins'
+    fill_in 'price', with: 50
+    click_button 'submit'
+    expect(page).to have_content 'Ticket price set'
+  end
 end
