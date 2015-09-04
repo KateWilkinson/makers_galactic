@@ -14,4 +14,9 @@ feature 'Checking bookings' do
     expect(page).to eq '/admin_password'
     expect(page).to have_selector 'input'
   end
+
+  scenario 'admin should be able to see total revenue' do
+    visit '/admins'
+    expect(page).to have_content 'Total Revenue: £'
+  end
 end
